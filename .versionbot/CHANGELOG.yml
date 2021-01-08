@@ -1,4 +1,27 @@
 - commits:
+    - subject: Handle 'push' edge case with application access
+      hash: 72c0f3690b3f0caf588154f54aae2e1e0e05569a
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Scott Lowe <scott@balena.io>
+        signed-off-by: Scott Lowe <scott@balena.io>
+      author: Scott Lowe
+      nested: []
+    - subject: Handle `push` edge case with application access
+      hash: fdfe1a07c7bc4dd4bab0bd9c52f4849d0067bc62
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Scott Lowe <scott@balena.io>
+        signed-off-by: Scott Lowe <scott@balena.io>
+      author: Scott Lowe
+      nested: []
+  version: 12.37.2
+  date: 2021-01-08T16:24:20.604Z
+- commits:
     - subject: Refactor out command internal scandevices
       hash: aeff5997d02289619f3a2f1e3041144d559feb43
       body: ''
