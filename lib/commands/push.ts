@@ -374,6 +374,21 @@ export default class PushCmd extends Command {
 			organization: [Organization];
 		};
 
+		// * Temporary fix *
+		// When doing `$expand organization` on a public app (when not the owner)
+		// a partial document is returned without any organization data.
+		// So e.g. `balena push balena-sound` will break this commands logic.
+		// The balena cloud builder api will soon change to accept application slugs
+		// instead of `owner, app`, after which we will not need to do the expand
+		//
+		// Users should not be pushing to public apps anyway, so for now catch this situation:
+		if (!application.organization[0]) {
+			throw new ExpectedError(stripIndent`
+			You do no have rights to push to the public application ${application.app_name}.
+			If you are trying to deploy a public app, please make sure that you have created the application first.
+			`);
+		}
+
 		const opts = {
 			dockerfilePath,
 			emulated: options.emulated,
