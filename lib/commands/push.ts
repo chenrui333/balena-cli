@@ -384,7 +384,7 @@ export default class PushCmd extends Command {
 		// Users should not be pushing to public apps anyway, so for now catch this situation:
 		if (!application.organization[0]) {
 			throw new ExpectedError(stripIndent`
-			You do no have rights to push to the public application ${application.app_name}.
+			You do no have rights to push to the application ${application.app_name}.
 			If you are trying to deploy a public app, please make sure that you have created the application first.
 			`);
 		}
